@@ -12,6 +12,7 @@ server.listen(8080, () => {
 });
 wss.on("connection", (ws) => {
     let client = new Client(id, ws);
+    console.log("Connection established");
     clients.push(client);
     ws.onclose = (ev) => {
         channels.discClient(client);

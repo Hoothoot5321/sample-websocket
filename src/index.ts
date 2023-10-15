@@ -19,6 +19,7 @@ server.listen(8080, () => {
 
 wss.on("connection", (ws: WebSocket) => {
   let client = new Client(id, ws);
+  console.log("Connection established");
   clients.push(client);
 
   ws.onclose = (ev: CloseEvent) => {
